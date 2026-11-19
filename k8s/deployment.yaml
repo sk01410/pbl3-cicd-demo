@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pbl3-app
+  labels:
+    app: pbl3-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pbl3-app
+  template:
+    metadata:
+      labels:
+        app: pbl3-app
+    spec:
+      containers:
+        - name: pbl3-app
+          image: pbl3-cicd-demo:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 50m
+              memory: 32Mi
+            limits:
+              cpu: 250m
+              memory: 128Mi
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 15
+            periodSeconds: 10

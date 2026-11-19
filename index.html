@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud & DevOps CI/CD Dashboard</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #101827, #1d3557);
+            color: white;
+        }
+
+        .container {
+            width: min(90%, 650px);
+            padding: 45px;
+            border: 1px solid #52657f;
+            border-radius: 18px;
+            background: #1c2c43;
+            text-align: center;
+            box-shadow: 0 20px 50px #0005;
+        }
+
+        h1 {
+            margin-bottom: 12px;
+            font-size: 30px;
+        }
+
+        .subtitle {
+            color: #b8c7dc;
+            line-height: 1.6;
+        }
+
+        .status {
+            margin: 28px 0;
+            padding: 15px;
+            border-radius: 10px;
+            background: #14532d;
+            color: #bbf7d0;
+            font-weight: bold;
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .item {
+            padding: 18px;
+            border-radius: 10px;
+            background: #293e59;
+        }
+
+        .label {
+            display: block;
+            margin-bottom: 8px;
+            color: #b8c7dc;
+            font-size: 13px;
+        }
+
+        .value {
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 28px;
+            color: #9caec5;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1>Cloud & DevOps Dashboard</h1>
+        <p class="subtitle">
+            Automated Continuous Integration and Continuous Deployment
+            using Jenkins, Docker and Kubernetes.
+        </p>
+
+        <div class="status">
+            APPLICATION DEPLOYED SUCCESSFULLY
+        </div>
+
+        <section class="details">
+            <div class="item">
+                <span class="label">Application</span>
+                <span class="value">PBL3 CI/CD Demo</span>
+            </div>
+
+            <div class="item">
+                <span class="label">Version</span>
+                <span class="value" id="version">v1</span>
+            </div>
+
+            <div class="item">
+                <span class="label">Container Platform</span>
+                <span class="value">Docker</span>
+            </div>
+
+            <div class="item">
+                <span class="label">Orchestration</span>
+                <span class="value">Kubernetes</span>
+            </div>
+        </section>
+
+        <footer>
+            SRM Institute of Science and Technology | Cloud & DevOps PBL-III
+        </footer>
+    </main>
+</body>
+</html>
