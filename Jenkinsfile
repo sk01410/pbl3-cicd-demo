@@ -22,7 +22,10 @@ pipeline {
 
         stage('Load Image into Minikube') {
             steps {
-                sh 'minikube image load ${IMAGE_NAME}'
+                sh '''
+                    set -o pipefail
+                    docker save ${IMAGE_NAME} | docker exec -i minikube ctr -n k8s.io images import -
+                '''
             }
         }
 
